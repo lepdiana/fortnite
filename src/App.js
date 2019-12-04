@@ -8,7 +8,7 @@ import Products from './components/Products.js'
 import Populars from './components/Populars.js'
 import About from './components/About.js'
 
-
+import "./style/body.css"
 
 class App extends Component {
   constructor(){
