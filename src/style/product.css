@@ -1,0 +1,43 @@
+.eachProductSection{
+    overflow: scroll;
+    height: 570px;
+    margin-top: 0px;
+    text-align: center;
+}
+
+h1 {
+    color: #51278C;
+    font-family: 'Sigmar One', cursive;
+    font-size: 12px;
+    text-align: center;
+    opacity: 1;
+    transform: scale(1, 1.5);
+    -webkit-transform: scale(1, 1.5);
+}
+
+p {
+    font-family: 'Darker Grotesque', sans-serif;
+    font-size: 12px;
+}
+
+img {
+    width: 200px;
+    background-color: #5E88BF;
+    box-shadow: 3px 3px #999;
+    border: 1px solid #000000;
+}
+
+@media (min-width: 376px) {
+    .eachProductSection{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr)
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+    p {
+        font-size: 20px;
+        flex-wrap: wrap;
+    }
+}

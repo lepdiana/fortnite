@@ -1,0 +1,66 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    flex-wrap: wrap;
+    background-color: #5E88BF;
+    padding: 5px;
+    border: 1px solid #ffffff;
+    margin: 5px;
+}
+
+.products {
+    color: #ffffff;
+    font-size: 12px;
+    font-family: 'Sigmar One', cursive;
+    text-decoration-line: none;
+    text-shadow: 1px 1px #333;
+    transform: scale(1, 1.5);
+    -webkit-transform: scale(1, 1.5);
+}
+
+.popularProducts {
+    color: #ffffff;
+    font-size: 12px;
+    font-family: 'Sigmar One', cursive;
+    text-decoration-line: none;
+    text-shadow: 1px 1px #333;
+    transform: scale(1, 1.5);
+    -webkit-transform: scale(1, 1.5);
+}
+
+.about {
+    color: #ffffff;
+    font-size: 12px;
+    font-family: 'Sigmar One', cursive;
+    text-decoration-line: none;
+    text-shadow: 1px 1px #333;
+    transform: scale(1, 1.5);
+    -webkit-transform: scale(1, 1.5);
+}
+
+
+@media (min-width: 376px) {
+    .navbar {
+        margin-left: 30px;
+        margin-right: 30px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        padding: 20px
+    }
+
+    .products {
+        font-size: 25px;
+        text-shadow: 3px 3px #333;
+    }
+
+    .popularProducts {
+        font-size: 25px;
+        text-shadow: 3px 3px #333;
+    }
+
+    .about {
+        font-size: 25px;
+        text-shadow: 3px 3px #333;
+    }
+}

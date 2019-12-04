@@ -1,0 +1,17 @@
+.header {
+    display: flex;
+    justify-content: center;
+    background-image: url('https://i1.wp.com/wallpapersfortech.com/wp-content/uploads/2018/01/B7C0E237-6896-4949-98E6-E523253C2254.jpeg?ssl=1');
+    background-size: cover;
+    height: 20vh;
+    border: 5px solid #ffffff;
+    margin: 5px;
+}
+
+
+@media (min-width: 376px) {
+    .header {
+        height: 70vh;
+        margin: 30px;
+    }
+}

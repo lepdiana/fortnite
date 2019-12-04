@@ -1,0 +1,58 @@
+.popularContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #5E88BF;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid #ffffff;
+}
+
+.popularProductsSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #ffffff;
+    opacity: 0.5;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid #000000;
+}
+
+ul {
+    font-family: 'Darker Grotesque', sans-serif;
+    font-size: 12px;
+}
+
+img {
+    align-self: center;
+    width: 150px;
+}
+
+@media (min-width: 376px) {
+    .popularContainer {
+        margin: 30px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .popularProductsSection {
+        width: 250px;
+        border-radius: 10px;
+    }
+
+    h1 {
+        line-height: 20px;
+    }
+
+    ul {
+        font-size: 20px;
+    }
+
+    img {
+        width: 150px;
+    }
+}
