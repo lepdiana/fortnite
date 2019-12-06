@@ -5,7 +5,7 @@ import axios from 'axios'
 import Header from './components/Header.js'
 import Navbar from './components/Navbar.js'
 import Products from './components/Products.js'
-import Populars from './components/Populars.js'
+import UpcomingItems from './components/UpcomingItems.js'
 import About from './components/About.js'
 
 import "./style/body.css"
@@ -15,7 +15,7 @@ class App extends Component {
     super()
     this.state = {
       products: [],
-      populars: [],
+      upcomingItems: [],
       filteredProducts: []
     }
   }
@@ -36,12 +36,12 @@ class App extends Component {
 
   componentDidMount(){
     this.getProducts()
-    // this.getPopulars()
+    this.getUpcomingItems()
   }
 
 
   getProducts = () => {
-    axios.get('https://fnapi.me/api/items/all?lang=en&filter={{filterId}}', { headers: {'Authorization': `${process.env.REACT_APP_KEY}` }},
+    axios.get('https://fnapi.me/api/items/all?lang=en&filter={{filterId}}', { headers: { 'Authorization': `${process.env.REACT_APP_KEY}` }}
     )
     .then(res => {
       this.setState({
@@ -51,30 +51,26 @@ class App extends Component {
     .catch(err => console.log(err))
 }
 
-  // getPopulars = () => {
-  //   axios.get('https://vschool-cors.herokuapp.com?url=https://fortnite-api.theapinetwork.com/items/popular')
-  //   .then(res => {
-  //     this.setState({
-  //       populars: res.data.entries[3].entries
-  //     })
-  //   })
-  //   .catch(err => console.log(err))
-  // }
+  getUpcomingItems = () => {
+    axios.get('https://fnapi.me/api/items/upcoming?lang={{lang}}', { headers: { 'Authorization': `${process.env.REACT_APP_KEY}` }})
+    .then(res => {
+      this.setState({
+        upcomingItems: res.data.data
+      })
+    })
+    .catch(err => console.log(err))
+  }
   
  
 
   render(){
-
-    // const mappedPopulars = this.state.populars.map(popular => <Populars {... popular} key={popular.identifier}/>)
-  
-
     return(
       <div>
         <Header />
         <Navbar />
         <Switch>
           <Route exact path='/' render={rProps => <Products {...rProps} filteredProducts={this.state.filteredProducts} getByType={this.getByType} getProducts={this.getProducts} products={this.state.products} removeFilter={this.removeFilter}/>}/>
-          {/* <Route path='/populars' render={rProps => <Populars {...rProps} mappedPopulars={mappedPopulars}/>}/> */}
+          <Route path='/upcomingitems' render={rProps => <UpcomingItems {...rProps} getUpcomingItems ={this.getUpcomingItems} upcomingItems={this.state.upcomingItems}/>}/>
           <Route path='/about' component={About}/>
         </Switch>
       </div>

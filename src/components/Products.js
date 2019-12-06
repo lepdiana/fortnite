@@ -5,8 +5,6 @@ import '../style/products.css'
 
 
 const Products = rProps => {
-    console.log(rProps.products)
-    console.log(rProps.filteredProducts)
     return (
         <div className='mainContainer'>
             <div className='typeOfProductsContainer'>
@@ -16,7 +14,6 @@ const Products = rProps => {
                 <div className='buttonSection'>
                     <button onClick={ rProps.removeFilter }>All</button>
                     <button onClick={() => rProps.getByType('backpack')}>Backpack</button>
-                    <button onClick={() => rProps.getByType('bundle')}>Bundle</button>
                     <button onClick={() => rProps.getByType('contrail')}>Contrail</button>
                     <button onClick={() => rProps.getByType('emoji')}>Emoji</button>
                     <button onClick={() => rProps.getByType('emote')}>Emote</button>
