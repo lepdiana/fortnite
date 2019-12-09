@@ -1,7 +1,7 @@
 import React from 'react'
 import UpcomingItem from './UpcomingItem.js'
 
-import '../style/populars.css'
+import '../style/upcomingItems.css'
 
 const UpcomingItems = props => {
     console.log(props.upcomingItems)

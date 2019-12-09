@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Popular = props => {
+const UpcomingItem = props => {
     return(
         <div className='popularProductsSection'>
             <h1>{props.name}</h1>
@@ -13,4 +13,4 @@ const Popular = props => {
     )
 }
 
-export default Popular
+export default UpcomingItem
