@@ -3,7 +3,7 @@ import React from 'react'
 import '../style/product.css'
 
 const Product = props => {
-    const mappedFilteredProducts = props.rProps.filteredProducts.map(filteredProduct => 
+    const mappedFilteredProducts = props.props.filteredProducts.map(filteredProduct => 
                                                                         <div key={filteredProduct.itemId}>
                                                                             <h1>{filteredProduct.item.name}</h1>
                                                                             <p>Description: {filteredProduct.item.description}</p>

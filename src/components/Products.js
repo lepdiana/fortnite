@@ -4,7 +4,7 @@ import Product from './Product.js'
 import '../style/products.css'
 
 
-const Products = rProps => {
+const Products = props => {
     return (
         <div className='mainContainer'>
             <div className='typeOfProductsContainer'>
@@ -12,23 +12,23 @@ const Products = rProps => {
                     <p className='typeOfProductsTitle'>Types of Products:</p>
                 </div>
                 <div className='buttonSection'>
-                    <button onClick={ rProps.removeFilter }>All</button>
-                    <button onClick={() => rProps.getByType('backpack')}>Backpack</button>
-                    <button onClick={() => rProps.getByType('contrail')}>Contrail</button>
-                    <button onClick={() => rProps.getByType('emoji')}>Emoji</button>
-                    <button onClick={() => rProps.getByType('emote')}>Emote</button>
-                    <button onClick={() => rProps.getByType('glider')}>Glider</button>
-                    <button onClick={() => rProps.getByType('loadingscreen')}>Loading Screen</button>
-                    <button onClick={() => rProps.getByType('outfit')}> Outfit</button>
-                    <button onClick={() => rProps.getByType('pet')}>Pet</button>
-                    <button onClick={() => rProps.getByType('pickaxe')}>Pickaxe</button>
-                    <button onClick={() => rProps.getByType('spray')}>Spray</button>
-                    <button onClick={() => rProps.getByType('toy')}>Toy</button>
-                    <button onClick={() => rProps.getByType('wrap')}>Wrap</button>
+                    <button onClick={ props.removeFilter }>All</button>
+                    <button onClick={() => props.getByType('backpack')}>Backpack</button>
+                    <button onClick={() => props.getByType('contrail')}>Contrail</button>
+                    <button onClick={() => props.getByType('emoji')}>Emoji</button>
+                    <button onClick={() => props.getByType('emote')}>Emote</button>
+                    <button onClick={() => props.getByType('glider')}>Glider</button>
+                    <button onClick={() => props.getByType('loadingscreen')}>Loading Screen</button>
+                    <button onClick={() => props.getByType('outfit')}> Outfit</button>
+                    <button onClick={() => props.getByType('pet')}>Pet</button>
+                    <button onClick={() => props.getByType('pickaxe')}>Pickaxe</button>
+                    <button onClick={() => props.getByType('spray')}>Spray</button>
+                    <button onClick={() => props.getByType('toy')}>Toy</button>
+                    <button onClick={() => props.getByType('wrap')}>Wrap</button>
                 </div>
             </div>
             <div className='productsSection'>
-                <Product rProps={rProps}/>
+                <Product props={props}/>
             </div>
         </div>
     )

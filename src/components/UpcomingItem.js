@@ -1,6 +1,9 @@
 import React from 'react'
 
-const UpcomingItem = props => {
+function UpcomingItem(props) {
+    const save = () => {
+        localStorage.setItem("item", "Hello")
+    }
     return(
         <div className='popularProductsSection'>
             <h1>{props.name}</h1>
@@ -9,6 +12,7 @@ const UpcomingItem = props => {
             <p>Cost: {props.const} vbucks</p>
             <p>Type: {props.type}</p>
             <img src={props.image} alt={props.name}/>
+            <button onClick={save}>Save</button>
         </div>
     )
 }

@@ -16,7 +16,13 @@ class App extends Component {
     this.state = {
       products: [],
       upcomingItems: [],
-      filteredProducts: []
+      filteredProducts: [],
+      name: "",
+      description: "",
+      rarity: "",
+      cost: "",
+      type: "",
+      image: ""
     }
   }
 
@@ -61,7 +67,20 @@ class App extends Component {
     .catch(err => console.log(err))
   }
   
- 
+  saveItem = item => {
+    alert("Item was successfully saved to your favorites.")
+    const savedItem = { name: item.name, description: item.description, rarity: item.rarity, cost: item.cost, type: item.type, image: item.image }
+
+    if (localStorage.getItem("saved")) {
+        const saved = JSON.parse(localStorage.getItem("saved"))
+        saved.push(savedItem)
+        localStorage.setItem("saved", JSON.stringify(saved))
+    } else {
+        const saved = []
+        saved.push(savedItem)
+        localStorage.setItem("saved", JSON.stringify(saved))
+    }
+  }
 
   render(){
     return(
@@ -69,7 +88,7 @@ class App extends Component {
         <Header />
         <Navbar />
         <Switch>
-          <Route exact path='/' render={rProps => <Products {...rProps} filteredProducts={this.state.filteredProducts} getByType={this.getByType} getProducts={this.getProducts} products={this.state.products} removeFilter={this.removeFilter}/>}/>
+          <Route exact path='/' render={rProps => <Products {...rProps} filteredProducts={this.state.filteredProducts} getByType={this.getByType} getProducts={this.getProducts} products={this.state.products} removeFilter={this.removeFilter} saveItem={this.saveItem} />}/>
           <Route path='/upcomingitems' render={rProps => <UpcomingItems {...rProps} getUpcomingItems ={this.getUpcomingItems} upcomingItems={this.state.upcomingItems}/>}/>
           <Route path='/about' component={About}/>
         </Switch>
